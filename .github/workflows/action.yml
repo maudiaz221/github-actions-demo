@@ -28,7 +28,8 @@ jobs:
         failed_scripts=""
         for script in code/*.py; do
           if ! python "$script"; then
-            failed_scripts+=" $script"
+            script_name=$(basename "$script")
+            failed_scripts+=" $script_name"
           fi
         done
 
