@@ -8,7 +8,7 @@ data = {
 }
 
 # Create a DataFrame from the dictionary
-df = pd.DataFrame(data)
+df = pd.DataFrame(data
 
 # Print the DataFrame
 print(df)
