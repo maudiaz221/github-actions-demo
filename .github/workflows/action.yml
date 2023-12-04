@@ -26,7 +26,7 @@ jobs:
     - name: Test Python scripts
       run: |
         failed_scripts=""
-        for script in scripts/*.py; do
+        for script in code/*.py; do
           if ! python "$script"; then
             failed_scripts+=" $script"
           fi
