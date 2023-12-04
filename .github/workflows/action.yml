@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.9
+        python-version: 3.x  # Specify your Python version
 
     - name: Install dependencies
       run: |
@@ -26,8 +26,10 @@ jobs:
     - name: Test Python scripts
       run: |
         failed_scripts=""
-        for script in code/*.py; do
-          python "$script" || failed_scripts+=" $script"
+        for script in scripts/*.py; do
+          if ! python "$script"; then
+            failed_scripts+=" $script"
+          fi
         done
 
         if [ -n "$failed_scripts" ]; then
